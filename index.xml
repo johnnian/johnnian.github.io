@@ -6,13 +6,22 @@
     <description>Recent content on Johnnian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Requests依赖-ImportError: urllib3 v20 only suports Openssl 1.1.1&#43;</title>
+      <link>https://johnnian.github.io/post/2023-05-02-python3-requests/</link>
+      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-02-python3-requests/</guid>
+      <description>一、现象 环境：Python 3.7.2 现象：Python文件中引入了requests库，在执行的时候报错： ImportError: urllib3 v20 only suports Openssl 1.1.1+, currently the &amp;#39;ssl&amp;#39; module is compiled with openssL 1.0.2k-fips 26 Jan 2017. See: https://github.Com/urllib3/urllib3/issues/2168 二</description>
+    </item>
+    
     <item>
       <title>新的博客，新的开始</title>
-      <link>https://johnnian.github.io/post/2023-05-03-hello-world/</link>
+      <link>https://johnnian.github.io/post/2023-05-02-hello-world/</link>
       <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://johnnian.github.io/post/2023-05-03-hello-world/</guid>
+      <guid>https://johnnian.github.io/post/2023-05-02-hello-world/</guid>
       <description>原本博客是直接用Github Issue来写，但是篇幅多了之后，直观上体验不是很好. 因此今天花了一天时间，基于 Hugo + Github Page，重新搭建了一个站</description>
     </item>
     

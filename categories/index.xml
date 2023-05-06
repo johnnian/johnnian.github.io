@@ -6,7 +6,16 @@
     <description>Recent content in Categories on Johnnian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Problems</title>
+      <link>https://johnnian.github.io/categories/problems/</link>
+      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/categories/problems/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Tech</title>
       <link>https://johnnian.github.io/categories/tech/</link>
