@@ -8,12 +8,12 @@
     <language>en-us</language>
     <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python Requests依赖-ImportError: urllib3 v20 only suports Openssl 1.1.1&#43;</title>
+      <title>Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;</title>
       <link>https://johnnian.github.io/post/2023-05-02-python3-requests/</link>
       <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://johnnian.github.io/post/2023-05-02-python3-requests/</guid>
-      <description>一、现象 环境：Python 3.7.2 现象：Python文件中引入了requests库，在执行的时候报错： ImportError: urllib3 v20 only suports Openssl 1.1.1+, currently the &amp;#39;ssl&amp;#39; module is compiled with openssL 1.0.2k-fips 26 Jan 2017. See: https://github.Com/urllib3/urllib3/issues/2168 二</description>
+      <description>一、现象 环境：Python 3.7.2 现象：Python文件中引入了requests库，在执行的时候报错： ImportError: urllib3 v2.0 only suports Openssl 1.1.1+, currently the &amp;#39;ssl&amp;#39; module is compiled with openssL 1.0.2k-fips 26 Jan 2017. See: https://github.Com/urllib3/urllib3/issues/2168 二</description>
     </item>
     
     <item>
