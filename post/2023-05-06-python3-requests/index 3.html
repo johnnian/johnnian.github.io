@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="计算机网络系列（1）-TCP/IP模型" />
-    <meta property="og:title" content="计算机网络系列（1）-TCP/IP模型" />
-    <meta property="twitter:title" content="计算机网络系列（1）-TCP/IP模型" />
+    <meta name="title" content="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;" />
+    <meta property="og:title" content="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;" />
+    <meta property="twitter:title" content="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;" />
     
 
     
-    <meta name="description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向">
-    <meta property="og:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
-    <meta property="twitter:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
+    <meta name="description" content="解决Python3报错的问题-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;">
+    <meta property="og:description" content="解决Python3报错的问题-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;" />
+    <meta property="twitter:description" content="解决Python3报错的问题-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="技术博客,  Java, devops, 架构">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>计算机网络系列（1）-TCP/IP模型 | Johnnian博客 | Johnnian Blog</title>
+    <title>Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43; | Johnnian博客 | Johnnian Blog</title>
 
-    <link rel="canonical" href="/post/2023-05-08-tcp-ip-model/">
+    <link rel="canonical" href="/post/2023-05-06-python3-requests/">
 
     
     
@@ -172,12 +172,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                        <a class="tag" href="/tags/network" title="Network">
-                            Network
+                        <a class="tag" href="/tags/python" title="Python">
+                            Python
                         </a>
                         
                     </div>
-                    <h1>计算机网络系列（1）-TCP/IP模型</h1>
+                    <h1>Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -186,7 +186,7 @@
                                      &#34;Johnnian&#34;
                              
                             on 
-                            Monday, May 8, 2023
+                            Saturday, May 6, 2023
                             
                             
                             
@@ -212,65 +212,50 @@
                 post-container">
 
                 
-                <h1 id="tcpip四层模型">TCP/IP四层模型</h1>
-<h2 id="1参考模型">1、参考模型</h2>
-<table>
-<thead>
-<tr>
-<th>分层</th>
-<th>作用</th>
-<th>常见协议</th>
-<th>报文格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>application layer</td>
-<td>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。</td>
-<td>HTTP、HTTPS、FTP、POP3、SMTP、Telnet、DHCP、DNS等</td>
-<td>应用程序数据</td>
-</tr>
-<tr>
-<td>transport layer</td>
-<td>能够解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。</td>
-<td>TCP、UDP</td>
-<td>报文段</td>
-</tr>
-<tr>
-<td>internet layer</td>
-<td>解决在一个单一网络上传输数据包的问题，管理网络层间的数据包传输，实现不同网络之间的互连和路由选择</td>
-<td>IP、ICMP、IGMP</td>
-<td>IP数据包</td>
-</tr>
-<tr>
-<td>Network Access (link) layer</td>
-<td>数据包从一个设备的网络层传输到另外一个设备的网络层的方法</td>
-<td>Ethernet、WiFi、PPP等</td>
-<td>帧</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2网络拓扑与数据流">2、网络拓扑与数据流</h2>
-<p>应用层数据在网络传输过程中，经过每一层都会增加对应数据：</p>
-<p>
-  <img src="https://user-images.githubusercontent.com/2493670/236869008-5cf96c84-b66f-4d49-8546-d51ea338edb2.png" alt="700px-UDP_encapsulation svg">
-
-</p>
-<p>下面是网络拓扑及数据流向：</p>
-<p>
-  <img src="https://user-images.githubusercontent.com/2493670/236869047-908e42d4-59ad-40e2-bc8d-539722905482.png" alt="700px-IP_stack_connections svg">
-
-</p>
-<p>以FTP应用为例，通过路由器连接两段网络进行通讯</p>
-<p>
-  <img src="https://user-images.githubusercontent.com/2493670/236875296-54684d86-5cb6-4dd9-a74a-99729ad1ce23.png" alt="WX20230509-001316@2x">
-
-</p>
-<h1 id="参考">参考：</h1>
+                <h1 id="一现象">一、现象</h1>
+<p>环境：Python 3.7.2
+现象：Python文件中引入了requests库，在执行的时候报错：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ImportError: urllib3 v2.0 only suports Openssl 1.1.1+, 
+</span></span><span style="display:flex;"><span>currently the <span style="color:#f1fa8c">&#39;ssl&#39;</span> module is compiled with openssL 1.0.2k-fips <span style="color:#bd93f9">26</span> Jan 2017. 
+</span></span><span style="display:flex;"><span>See: https://github.Com/urllib3/urllib3/issues/2168
+</span></span></code></pre></div><h1 id="二解决方法">二、解决方法</h1>
+<p>1、检查 requests 版本：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>pip show requests
+</span></span></code></pre></div><p>2、重新安装指定版本的request库</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ pip uninstall requests
+</span></span><span style="display:flex;"><span>$ pip install <span style="color:#8be9fd;font-style:italic">requests</span><span style="color:#ff79c6">==</span>2.29.0
+</span></span><span style="display:flex;"><span>$ pip show urllib3
+</span></span><span style="display:flex;"><span>Name: urllib3
+</span></span><span style="display:flex;"><span>Version: 1.26.15
+</span></span><span style="display:flex;"><span>Summary: HTTP library with thread-safe connection pooling, file post, and more.
+</span></span><span style="display:flex;"><span>Home-page: https://urllib3.readthedocs.io/
+</span></span><span style="display:flex;"><span>Author: Andrey Petrov
+</span></span><span style="display:flex;"><span>Author-email: andrey.petrov@shazow.net
+</span></span><span style="display:flex;"><span>License: MIT
+</span></span><span style="display:flex;"><span>Location: /XXX/python3.7/site-packages
+</span></span><span style="display:flex;"><span>Requires: 
+</span></span><span style="display:flex;"><span>Required-by: requests
+</span></span></code></pre></div><p>重新安装完成后，问题解决！</p>
+<h1 id="三原理">三、原理</h1>
+<p>1、依赖关系： <code>[requests] --&gt; [urllib3] --&gt; [openssl]</code></p>
+<p>在 Python 3.7.2 下默认安装的requests版本为<code>2.30.0</code>，这个版本依赖 urllib3 的 <code>v2.0</code>版本，根据<a href="https://urllib3.readthedocs.io/en/latest/changelog.html">urllib官网</a>的介绍：</p>
+<pre><code>Removed support for OpenSSL versions earlier than 1.1.1 or that don’t have SNI support. When an incompatible OpenSSL version is detected an ImportError is raised (#2168).
+删除了对早于 1.1.1 或不支持 SNI 的 OpenSSL 版本的支持。当检测到不兼容的 OpenSSL 版本时，将ImportError引发 ( [#2168](https://github.com/urllib3/urllib3/issues/2168) )。
+</code></pre>
+<p>实际查看，操作系统的OpenSSL版本号：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl version
+</span></span><span style="display:flex;"><span>OpenSSL 1.0.2k-fips  <span style="color:#bd93f9">26</span> Jan <span style="color:#bd93f9">2017</span>
+</span></span></code></pre></div><p>2、解决思路：</p>
 <ul>
-<li><a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F#TCP/IP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B">https://zh.wikipedia.org/wiki/TCP/IP协议族#TCP/IP参考模型</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">https://en.wikipedia.org/wiki/Internet_protocol_suite</a></li>
-<li>《TCP/IP详解-卷1》第一章</li>
+<li>思路1：升级OpenSSL版本：涉及影响太大</li>
+<li>思路2：降低requests库的版本</li>
+</ul>
+<p>目前采用思路2：根据<a href="https://github.com/psf/requests/issues/6432">github描述</a>，requests==2.29.0版本依赖urllib3的 <code>1.21.1~1.27</code>版本，而urllib3 &lt; v2.0 版本的，是支持openssl低版本的。</p>
+<h1 id="四参考链接">四、参考链接</h1>
+<ul>
+<li><a href="https://github.com/urllib3/urllib3/issues/2168">https://github.com/urllib3/urllib3/issues/2168</a></li>
+<li><a href="https://github.com/psf/requests/issues/6432">https://github.com/psf/requests/issues/6432</a></li>
+<li><a href="https://urllib3.readthedocs.io/en/latest/changelog.html">https://urllib3.readthedocs.io/en/latest/changelog.html</a></li>
 </ul>
 
 
@@ -321,10 +306,15 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/2023-05-06-python3-requests/" data-toggle="tooltip" data-placement="top" title="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;">&larr;
+                        <a href="/post/2023-05-03-hello-world/" data-toggle="tooltip" data-placement="top" title="新的博客，新的开始">&larr;
                             Previous Post</a>
                     </li>
                     
+                    
+                    <li class="next">
+                        <a href="/post/2023-05-08-tcp-ip-model/" data-toggle="tooltip" data-placement="top" title="计算机网络系列-TCP/IP模型">Next
+                            Post &rarr;</a>
+                    </li>
                     
                 </ul>
                 
@@ -581,6 +571,21 @@
 
 
 
+
+
+<script src="https://cdn.jsdelivr.net/gh/jmnote/plantuml-encoder@1.2.4/dist/plantuml-encoder.min.js" integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
+<script>
+(function(){
+  let plantumlPrefix = "language-plantuml";
+  Array.prototype.forEach.call(document.querySelectorAll("[class^=" + plantumlPrefix + "]"), function(code){
+    let image = document.createElement("IMG");
+    image.loading = 'lazy'; 
+    image.src = 'http://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText);
+    code.parentNode.parentNode.insertBefore(image, code.parentNode);
+    code.parentNode.style.display = 'none';
+  });
+})();
+</script>
 
 
 </body>
