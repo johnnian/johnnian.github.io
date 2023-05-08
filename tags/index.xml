@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Johnnian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Network</title>
+      <link>https://johnnian.github.io/tags/network/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/tags/network/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Python</title>
       <link>https://johnnian.github.io/tags/python/</link>

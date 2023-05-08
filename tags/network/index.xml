@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on Johnnian</title>
+    <link>https://johnnian.github.io/tags/network/</link>
+    <description>Recent content in Network on Johnnian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机网络系列-TCP/IP模型</title>
+      <link>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</guid>
+      <description>TCP/IP四层模型 1、参考模型 分层 作用 常见协议 报文格式 application layer 该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。 HTT</description>
+    </item>
+    
+  </channel>
+</rss>

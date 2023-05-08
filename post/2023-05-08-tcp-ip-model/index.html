@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Posts Archive" />
-    <meta property="og:title" content="Posts Archive" />
-    <meta property="twitter:title" content="Posts Archive" />
+    <meta name="title" content="计算机网络系列-TCP/IP模型" />
+    <meta property="og:title" content="计算机网络系列-TCP/IP模型" />
+    <meta property="twitter:title" content="计算机网络系列-TCP/IP模型" />
     
 
     
-    <meta name="description" content="Archive of historical posts.">
-    <meta property="og:description" content="Archive of historical posts." />
-    <meta property="twitter:description" content="Archive of historical posts." />
+    <meta name="description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向">
+    <meta property="og:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
+    <meta property="twitter:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="技术博客,  Java, devops, 架构">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>Posts Archive | Johnnian博客 | Johnnian Blog</title>
+    <title>计算机网络系列-TCP/IP模型 | Johnnian博客 | Johnnian Blog</title>
 
-    <link rel="canonical" href="/archive/">
+    <link rel="canonical" href="/post/2023-05-08-tcp-ip-model/">
 
     
     
@@ -157,14 +157,41 @@
 
 
 
-<header class="intro-header" style="background-image: url('/img/home-bg-jeep.jpg')">
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg-jeep.jpg')
+    }
+</style>
+
+<header class="intro-header" >
+
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Johnnian </h1>
-                    
-		    <span class="subheading">尔识真理，真理释尔</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/network" title="Network">
+                            Network
+                        </a>
+                        
+                    </div>
+                    <h1>计算机网络系列-TCP/IP模型</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                     &#34;Johnnian&#34;
+                             
+                            on 
+                            Monday, May 8, 2023
+                            
+                            
+                            
+                            
+                    </span>
                 </div>
             </div>
         </div>
@@ -174,160 +201,208 @@
 
 
 
+<article>
+    <div class="container">
+        <div class="row">
 
-<div data-pagefind-ignore="all" class="container">
-    <div class="row">
-   	    <div class="
-            col-lg-8 col-lg-offset-1
-            col-md-8 col-md-offset-1
-            col-sm-12
-            col-xs-12
-            post-container
-        ">
-            <div class="archive-list">
-                
-                
-                    
-                    
-                        
-                            
-                            <h1 class="title is-4 has-text-weight-normal">2023</h1>
-                        
-                    
-                        
-                    
-                        
-                    
-
-                    <ul>
-                    
-                        <li>
-                            <span>05/08</span> — 
-                            <a href="/post/2023-05-08-tcp-ip-model/">
-                                计算机网络系列-TCP/IP模型
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <span>05/06</span> — 
-                            <a href="/post/2023-05-06-python3-requests/">
-                                Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;
-                            </a>
-                        </li>
-                    
-                        <li>
-                            <span>05/03</span> — 
-                            <a href="/post/2023-05-03-hello-world/">
-                                新的博客，新的开始
-                            </a>
-                        </li>
-                    
-                    </ul>
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
 
                 
-                
-            </div>
-       	</div>
-        
+                <h1 id="tcpip四层模型">TCP/IP四层模型</h1>
+<h2 id="1参考模型">1、参考模型</h2>
+<table>
+<thead>
+<tr>
+<th>分层</th>
+<th>作用</th>
+<th>常见协议</th>
+<th>报文格式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>application layer</td>
+<td>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。</td>
+<td>HTTP、HTTPS、FTP、POP3、SMTP、Telnet、DHCP、DNS等</td>
+<td>应用程序数据</td>
+</tr>
+<tr>
+<td>transport layer</td>
+<td>能够解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。</td>
+<td>TCP、UDP</td>
+<td>报文段</td>
+</tr>
+<tr>
+<td>internet layer</td>
+<td>解决在一个单一网络上传输数据包的问题，管理网络层间的数据包传输，实现不同网络之间的互连和路由选择</td>
+<td>IP、ICMP、IGMP</td>
+<td>IP数据包</td>
+</tr>
+<tr>
+<td>Network Access (link) layer</td>
+<td>数据包从一个设备的网络层传输到另外一个设备的网络层的方法</td>
+<td>Ethernet、WiFi、PPP等</td>
+<td>帧</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2网络拓扑与数据流">2、网络拓扑与数据流</h2>
+<p>应用层数据在网络传输过程中，经过每一层都会增加对应数据：</p>
+<p>
+  <img src="https://user-images.githubusercontent.com/2493670/236869008-5cf96c84-b66f-4d49-8546-d51ea338edb2.png" alt="700px-UDP_encapsulation svg">
 
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
+</p>
+<p>下面是网络拓扑及数据流向：</p>
+<p>
+  <img src="https://user-images.githubusercontent.com/2493670/236869047-908e42d4-59ad-40e2-bc8d-539722905482.png" alt="700px-IP_stack_connections svg">
+
+</p>
+<p>以FTP应用为例，通过路由器连接两段网络进行通讯</p>
+<p>
+  <img src="https://user-images.githubusercontent.com/2493670/236875296-54684d86-5cb6-4dd9-a74a-99729ad1ce23.png" alt="WX20230509-001316@2x">
+
+</p>
+<h1 id="参考">参考：</h1>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F#TCP/IP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B">https://zh.wikipedia.org/wiki/TCP/IP协议族#TCP/IP参考模型</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">https://en.wikipedia.org/wiki/Internet_protocol_suite</a></li>
+<li>《TCP/IP详解-卷1》第一章</li>
+</ul>
+
+
+                
+                
+<div class="entry-shang text-center">
     
+	    <p>「真诚赞赏，手留余香」</p>
 	
-    <section class="visible-md visible-lg">
-	
-        <div class="short-about">
-            
-            <a href="/about">
-               <img src="/img/johnnian.png" alt="avatar" style="cursor: pointer" />
-            </a>
-            
-            
-                <p>Software Developer, Christian, Guitarist</p>
-            
-           
-           <ul class="list-inline">
-               
-               <li>
-                   <a href="mailto:johnnian@126.com">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                      </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-               
-               <li>
-                   <a target="_blank" href="https://github.com/johnnian">
-                       <span class="fa-stack fa-lg">
-                           <i class="fas fa-circle fa-stack-2x"></i>
-                           <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                       </span>
-                   </a>
-               </li>
-               
-               
-               
-               
-               
-               
-            
-            
-               
-               
-               
-               
-                </ul>
-            </div>
-    </section>
-	
-    
-    
-    
-    
-    <section>
-        <hr class="hidden-sm hidden-xs">
-        <h5>FEATURED TAGS</h5>
-        <div class="tags">
-            
-            
-               
-                    <a href="/tags/network" title="network">
-                        network
-                    </a>
-               
-            
-               
-                    <a href="/tags/python" title="python">
-                        python
-                    </a>
-               
-            
-        </div>
-    </section>
-    
-
-    
-    
-    
+	<button class="zs show-zs btn btn-bred">赞赏支持</button>
 </div>
-
+<div class="zs-modal-bg"></div>
+<div class="zs-modal-box">
+	<div class="zs-modal-head">
+		<button type="button" class="close">×</button>
+		<span class="author"><a href="https://johnnian.github.io"><img src="/img/favicon.png" />Johnnian</a></span>
+        
+	        <p class="tip"><i></i><span>真诚赞赏，手留余香</span></p>
+		
+ 
+	</div>
+	<div class="zs-modal-body">
+		<div class="zs-modal-btns">
+			<button class="btn btn-blink" data-num="2">2元</button>
+			<button class="btn btn-blink" data-num="5">5元</button>
+			<button class="btn btn-blink" data-num="10">10元</button>
+			<button class="btn btn-blink" data-num="50">50元</button>
+			<button class="btn btn-blink" data-num="100">100元</button>
+			<button class="btn btn-blink" data-num="1">任意金额</button>
+		</div>
+		<div class="zs-modal-pay">
+			<button class="btn btn-bred" id="pay-text">2元</button>
+			<p>使用<span id="pay-type">微信</span>扫描二维码完成支付</p>
+			<img src="/img/reward/wechat-2.png"  id="pay-image"/>
+		</div>
+	</div>
+	<div class="zs-modal-footer">
+		<label><input type="radio" name="zs-type" value="wechat" class="zs-type" checked="checked"><span ><span class="zs-wechat"><img src="/img/reward/wechat-btn.png"/></span></label>
+		<label><input type="radio" name="zs-type" value="alipay" class="zs-type" class="zs-alipay"><img src="/img/reward/alipay-btn.png"/></span></label>
 	</div>
 </div>
+<script type="text/javascript" src="/js/reward.js"></script>
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/2023-05-06-python3-requests/" data-toggle="tooltip" data-placement="top" title="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
 
 
-<hr />
+<script src="https://giscus.app/client.js"
+        data-repo="johnnian/johnnian.github.io"
+        data-repo-id="R_kgDOJeOxhg"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOJeOxhs4CWOSa"
+        data-mapping=""
+        data-reactions-enabled=""
+        data-emit-metadata=""
+        data-theme=""
+        data-lang=""
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        <a href="/tags/network" title="network">
+                            network
+                        </a>
+                        
+                        
+                        
+                        <a href="/tags/python" title="python">
+                            python
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
 
 
 
