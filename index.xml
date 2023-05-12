@@ -6,14 +6,23 @@
     <description>Recent content on Johnnian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机网络系列（2）-环回地址localhost</title>
+      <link>https://johnnian.github.io/post/2023-05-12-localhost/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-12-localhost/</guid>
+      <description>一、介绍 常常会看到127.0.0.1或localhost，localhost是一个主机名，可以通过以下方式看到： $ vi /etc/hosts ## # Host Database # # localhost is used to configure</description>
+    </item>
+    
     <item>
       <title>计算机网络系列（1）-TCP/IP模型</title>
       <link>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</link>
       <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</guid>
-      <description>TCP/IP四层模型 1、参考模型 分层 作用 常见协议 报文格式 application layer 该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。 HTT</description>
+      <description>一、TCP/IP四层模型 1、参考模型 分层 作用 常见协议 报文格式 应用层 该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。</description>
     </item>
     
     <item>

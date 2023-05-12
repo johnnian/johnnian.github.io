@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="计算机网络系列（1）-TCP/IP模型" />
-    <meta property="og:title" content="计算机网络系列（1）-TCP/IP模型" />
-    <meta property="twitter:title" content="计算机网络系列（1）-TCP/IP模型" />
+    <meta name="title" content="计算机网络系列（2）-环回地址localhost" />
+    <meta property="og:title" content="计算机网络系列（2）-环回地址localhost" />
+    <meta property="twitter:title" content="计算机网络系列（2）-环回地址localhost" />
     
 
     
-    <meta name="description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向">
-    <meta property="og:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
-    <meta property="twitter:description" content="简要介绍TCP/IP模型以及对应网络拓扑、数据流向" />
+    <meta name="description" content="介绍计算机网路中的环回地址localhost，并且介绍对应数据流与设计思想">
+    <meta property="og:description" content="介绍计算机网路中的环回地址localhost，并且介绍对应数据流与设计思想" />
+    <meta property="twitter:description" content="介绍计算机网路中的环回地址localhost，并且介绍对应数据流与设计思想" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="技术博客,  Java, devops, 架构">
     <link rel="shortcut icon" href="/img/favicon.ico">
 
-    <title>计算机网络系列（1）-TCP/IP模型 | Johnnian博客 | Johnnian Blog</title>
+    <title>计算机网络系列（2）-环回地址localhost | Johnnian博客 | Johnnian Blog</title>
 
-    <link rel="canonical" href="/post/2023-05-08-tcp-ip-model/">
+    <link rel="canonical" href="/post/2023-05-12-localhost/">
 
     
     
@@ -177,7 +177,7 @@
                         </a>
                         
                     </div>
-                    <h1>计算机网络系列（1）-TCP/IP模型</h1>
+                    <h1>计算机网络系列（2）-环回地址localhost</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         
@@ -186,7 +186,7 @@
                                      &#34;Johnnian&#34;
                              
                             on 
-                            Monday, May 8, 2023
+                            Friday, May 12, 2023
                             
                             
                             
@@ -212,65 +212,32 @@
                 post-container">
 
                 
-                <h1 id="一tcpip四层模型">一、TCP/IP四层模型</h1>
-<h2 id="1参考模型">1、参考模型</h2>
-<table>
-<thead>
-<tr>
-<th>分层</th>
-<th>作用</th>
-<th>常见协议</th>
-<th>报文格式</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>应用层</td>
-<td>该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。</td>
-<td>HTTP、HTTPS、FTP、POP3、SMTP、Telnet、DHCP、DNS等</td>
-<td>应用程序数据</td>
-</tr>
-<tr>
-<td>传输层</td>
-<td>能够解决诸如端到端可靠性（“数据是否已经到达目的地？”）和保证数据按照正确的顺序到达这样的问题。</td>
-<td>TCP、UDP</td>
-<td>报文段</td>
-</tr>
-<tr>
-<td>网络层</td>
-<td>解决在一个单一网络上传输数据包的问题，管理网络层间的数据包传输，实现不同网络之间的互连和路由选择</td>
-<td>IP、ICMP、IGMP</td>
-<td>IP数据报</td>
-</tr>
-<tr>
-<td>链路层</td>
-<td>数据包从一个设备的网络层传输到另外一个设备的网络层的方法</td>
-<td>Ethernet、WiFi、PPP等</td>
-<td>帧</td>
-</tr>
-</tbody>
-</table>
-<h2 id="2网络拓扑与数据流">2、网络拓扑与数据流</h2>
-<p>应用层数据在网络传输过程中，经过每一层都会增加对应数据：</p>
+                <h1 id="一介绍">一、介绍</h1>
+<p>常常会看到<code>127.0.0.1</code>或<code>localhost</code>，<code>localhost</code>是一个主机名，可以通过以下方式看到：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ vi /etc/hosts
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">##</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Host Database</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">#</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># localhost is used to configure the loopback interface</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># when the system is booting.  Do not change this entry.</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4">##</span>
+</span></span><span style="display:flex;"><span>127.0.0.1       localhost
+</span></span><span style="display:flex;"><span>255.255.255.255 broadcasthost
+</span></span><span style="display:flex;"><span>::1             localhost
+</span></span></code></pre></div><p>localhost一般都是指向了 <code>127.0.0.1</code>这个IP地址，通常操作系统都将 <code>127.0.0.1</code>分配给 <code>loopback interface</code>（有的称为 环回接口），<code>loopback interface</code> 这个机制，支持同一台主机的不同应用之间，可以直接通过 TCP/IP 协议进行通讯，对应数据而无需通过网卡或者设备驱动发往互联网。</p>
+<h1 id="二数据流">二、数据流</h1>
+<p>发往环回地址（localhost）的数据是在链路层直接做处理，无需通过互联网传输，工作原理示意图如下：</p>
 <p>
-  <img src="https://user-images.githubusercontent.com/2493670/236869008-5cf96c84-b66f-4d49-8546-d51ea338edb2.png" alt="700px-UDP_encapsulation svg">
+  <img src="https://github.com/johnnian/johnnian.github.io/assets/2493670/03605651-9ed8-4b5a-bf4b-4e4707d6aa72" alt="WX20230512-235005@2x">
 
 </p>
-<p>下面是网络拓扑及数据流向：</p>
-<p>
-  <img src="https://user-images.githubusercontent.com/2493670/236869047-908e42d4-59ad-40e2-bc8d-539722905482.png" alt="700px-IP_stack_connections svg">
-
-</p>
-<p>以FTP应用为例，通过路由器连接两段网络进行通讯</p>
-<p>
-  <img src="https://user-images.githubusercontent.com/2493670/236875296-54684d86-5cb6-4dd9-a74a-99729ad1ce23.png" alt="WX20230509-001316@2x">
-
-</p>
-<h1 id="二参考材料">二、参考材料</h1>
+<p>按照简单点的设计，或许可以是操作系统判断数据是发往环回地址（localhost）的时候，就直接做特殊处理，就像我们平时写程序的时候，经常做特殊处理，但是如果做特殊处理，就牺牲掉了的扩展性。</p>
+<p>这个数据的流向，依旧通过了传输层、网络层、数据链路层，这样的话，对于各个层次的处理都是按照标准的流程来，只是在最后链路层判断，当数据是发往localhost的时候，直接发到本机，而无需转发到外部。虽然流程多了一些步骤，但是却很有扩展性。这样的设计思想值得借鉴！</p>
+<h1 id="三参考材料">三、参考材料</h1>
 <ul>
-<li><a href="https://zh.wikipedia.org/wiki/TCP/IP%E5%8D%8F%E8%AE%AE%E6%97%8F#TCP/IP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B">https://zh.wikipedia.org/wiki/TCP/IP协议族#TCP/IP参考模型</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Internet_protocol_suite">https://en.wikipedia.org/wiki/Internet_protocol_suite</a></li>
-<li>《TCP/IP详解-卷1》第一章</li>
+<li><a href="https://zh.wikipedia.org/wiki/Localhost">https://zh.wikipedia.org/wiki/Localhost</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Loopback">https://en.wikipedia.org/wiki/Loopback</a></li>
+<li>《TCP/IP详解-卷1》第二章</li>
 </ul>
 
 
@@ -321,15 +288,10 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/2023-05-06-python3-requests/" data-toggle="tooltip" data-placement="top" title="Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;">&larr;
+                        <a href="/post/2023-05-08-tcp-ip-model/" data-toggle="tooltip" data-placement="top" title="计算机网络系列（1）-TCP/IP模型">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/2023-05-12-localhost/" data-toggle="tooltip" data-placement="top" title="计算机网络系列（2）-环回地址localhost">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
                 
@@ -586,6 +548,21 @@
 
 
 
+
+
+<script src="https://cdn.jsdelivr.net/gh/jmnote/plantuml-encoder@1.2.4/dist/plantuml-encoder.min.js" integrity="sha256-Qsk2KRBCN5qVZX7B+8+2IvQl1Aqc723qV1tBCQaVoqo=" crossorigin="anonymous"></script>
+<script>
+(function(){
+  let plantumlPrefix = "language-plantuml";
+  Array.prototype.forEach.call(document.querySelectorAll("[class^=" + plantumlPrefix + "]"), function(code){
+    let image = document.createElement("IMG");
+    image.loading = 'lazy'; 
+    image.src = 'http://www.plantuml.com/plantuml/svg/~1' + plantumlEncoder.encode(code.innerText);
+    code.parentNode.parentNode.insertBefore(image, code.parentNode);
+    code.parentNode.style.display = 'none';
+  });
+})();
+</script>
 
 
 </body>
