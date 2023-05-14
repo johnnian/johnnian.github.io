@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Johnnian</title>
+    <link>https://johnnian.github.io/</link>
+    <description>Recent content on Johnnian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://johnnian.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机网络系列（2）-环回地址localhost</title>
+      <link>https://johnnian.github.io/post/2023-05-12-localhost/</link>
+      <pubDate>Fri, 12 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-12-localhost/</guid>
+      <description>一、介绍 常常会看到127.0.0.1或localhost，localhost是一个主机名，可以通过以下方式看到： $ vi /etc/hosts ## # Host Database # # localhost is used to configure</description>
+    </item>
+    
+    <item>
+      <title>计算机网络系列（1）-TCP/IP模型</title>
+      <link>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-08-tcp-ip-model/</guid>
+      <description>一、TCP/IP四层模型 1、参考模型 分层 作用 常见协议 报文格式 应用层 该层包括所有和应用程序协同工作，利用基础网络交换应用程序专用的数据的协议。</description>
+    </item>
+    
+    <item>
+      <title>Python3 Requests依赖报错-ImportError: urllib3 v2.0 only suports Openssl 1.1.1&#43;</title>
+      <link>https://johnnian.github.io/post/2023-05-06-python3-requests/</link>
+      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-06-python3-requests/</guid>
+      <description>一、现象 环境：Python 3.7.2 现象：Python文件中引入了requests库，在执行的时候报错： ImportError: urllib3 v2.0 only suports Openssl 1.1.1+, currently the &amp;#39;ssl&amp;#39; module is compiled with openssL 1.0.2k-fips 26 Jan 2017. See: https://github.Com/urllib3/urllib3/issues/2168 二</description>
+    </item>
+    
+    <item>
+      <title>新的博客，新的开始</title>
+      <link>https://johnnian.github.io/post/2023-05-03-hello-world/</link>
+      <pubDate>Wed, 03 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/post/2023-05-03-hello-world/</guid>
+      <description>原本博客是直接用Github Issue来写，但是篇幅多了之后，直观上体验不是很好. 因此今天花了一天时间，基于 Hugo + Github Page，重新搭建了一个站</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://johnnian.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/about/</guid>
+      <description>About Me A programmer who can play the guitar.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://johnnian.github.io/search/placeholder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/search/placeholder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts Archive</title>
+      <link>https://johnnian.github.io/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://johnnian.github.io/archive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
